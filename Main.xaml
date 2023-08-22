@@ -1,0 +1,530 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="668,7894" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Web</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="648,7794" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="spBrowser" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="606,7702" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="568,7475" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="site" />
+            <Variable x:TypeArguments="x:String" Name="token" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtTestList" />
+            <Variable x:TypeArguments="x:String" Name="list" />
+            <Variable x:TypeArguments="ss:SecureString" Name="ssSPclientSecret" />
+            <Variable x:TypeArguments="x:String" Name="strSPclientId" />
+            <Variable x:TypeArguments="x:String" Name="file" />
+            <Variable x:TypeArguments="x:String" Name="documents" />
+            <Variable x:TypeArguments="njl:JObject" Name="joUpload" />
+            <Variable x:TypeArguments="x:Int32" Name="intResult" />
+            <Variable x:TypeArguments="ui:GenericValue" Name="spFolder" />
+            <Variable x:TypeArguments="x:Int32" Name="intDeleteStatus" />
+            <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="Config" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtConfig" />
+            <Variable x:TypeArguments="x:String" Name="strUserButton" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" Buttons="YesNoCancel" ChosenButton="[strUserButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="526,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Initiate interactive setup process to create and register SharePoint App to use APIs?&quot; +vbNewLine + vbNewLine + &quot;NOTE: You must have a SharePoint site for which you are the owner to complete the process.&quot;]" />
+          <Sequence DisplayName="Init Config" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtConfig]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Settings" WorkbookPath="Input\Config.xlsx" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtConfig]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="576,448" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,300" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[Not String.IsNullOrEmpty(row(&quot;Name&quot;).ToString)]" DisplayName="If Name Provided" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[Config(row("Name").ToString)]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object">[row("Value").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[strUserButton]" sap:VirtualizedContainerService.HintSize="526,160" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Throw x:Key="Cancel" Exception="[New BusinessRuleException(&quot;Cancel&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Yes" DisplayName="Invoke InteractiveSetup workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="InteractiveSetup.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[Config]</InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Switch>
+          <ui:Comment sap:VirtualizedContainerService.HintSize="526,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Please follow setup instructions before executing bot" />
+          <Sequence DisplayName="Auth" sap:VirtualizedContainerService.HintSize="526,614" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="isCredFound" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[site]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Config("sharePointSiteURL").ToString + "/"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:GetSecureCredential CredentialType="Generic" DisplayName="Get secure credential" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[ssSPclientSecret]" PersistanceType="Enterprise" Result="[isCredFound]" Target="[Config(&quot;credSharePointApp&quot;).ToString]" Username="[strSPclientId]" />
+            <If Condition="[Not isCredFound]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Throw Exception="[New Exception(&quot;Setup incomplete&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </If.Then>
+            </If>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Authorize_API workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Authorize_API.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">[strSPclientId]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret">[New Net.NetworkCredential("", ssSPclientSecret).Password]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_Token">[token]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+          <Sequence DisplayName="Files" sap:VirtualizedContainerService.HintSize="526,2830" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="njl:JArray" Name="jaFiles" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dtFiles" />
+              <Variable x:TypeArguments="x:String" Name="strDTFiles" />
+              <Variable x:TypeArguments="x:Int32" Name="intCheck" />
+              <Variable x:TypeArguments="x:Int32" Name="intCheckIn" />
+              <Variable x:TypeArguments="njl:JObject" Name="joUpdateResult" />
+              <Variable x:TypeArguments="x:Int32" Name="intUpdateStatus" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="output" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[spFolder]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[Config("sharePointLibrary").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[documents]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory + "\Supporting Files"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[output]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[Environment.CurrentDirectory + "\Output"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[file]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">API Setup Instructions.docx</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Upload_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Upload_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(documents, file)]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="njl:JObject" x:Key="out_Result">[joUpload]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[joUpload.ToString]" />
+            <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,252" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[spBrowser]" Url="[site + &quot;/&quot; + spFolder]">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;File uploaded to SharePoint here. Click okay to proceed.&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+            </ui:OpenBrowser>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Files workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Get_Files.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_oDataQuery" />
+                <OutArgument x:TypeArguments="njl:JArray" x:Key="out_FileJSON">[jaFiles]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FileDT">[dtFiles]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[jaFiles.ToString]" />
+            <ui:OutputDataTable DataTable="[dtFiles]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDTFiles]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[strDTFiles]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Download_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Download_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(output, "new_"+file)]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intResult]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[intResult.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Checkout_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Checkout_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intCheck]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[intCheck.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Update_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Update_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(documents, file)]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intUpdateStatus]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[intUpdateStatus.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Checkin_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Checkin_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intCheckIn]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Comments">changed</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Checkin_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Checkin_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intCheckIn]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Comments">changed</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[intCheckIn.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Delete_File workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Delete_File.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfile">[file]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intDeleteStatus]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="467,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[intDeleteStatus.ToString]" />
+          </Sequence>
+          <Sequence DisplayName="Folders" sap:VirtualizedContainerService.HintSize="526,1110" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:GenericValue" Name="folder" />
+              <Variable x:TypeArguments="njl:JObject" Name="joFoldResult" />
+              <Variable x:TypeArguments="njl:JArray" Name="joAllFolders" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="newFolder" />
+              <Variable x:TypeArguments="x:Int32" Name="intFoldDelete" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[folder]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[Config("sharePointFolder").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[newFolder]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[spFolder + "/" + folder]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Folder workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Add_Folder.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[newFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="njl:JObject" x:Key="out_Result">[joFoldResult]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[joFoldResult.ToString]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;New Subfolder created. Click okay to continue.&quot;]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Folders workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Get_Folders.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[spFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_oDataQuery">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+                <OutArgument x:TypeArguments="njl:JArray" x:Key="out_FolderJSON">[joAllFolders]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FolderDT" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[joAllFolders.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Delete_Folder workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Delete_Folder.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPfolder">[newFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intFoldDelete]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[intDeleteStatus.ToString]" />
+          </Sequence>
+          <Sequence DisplayName="Lists" sap:VirtualizedContainerService.HintSize="526,2190" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="dctItem" />
+              <Variable x:TypeArguments="njl:JObject" Name="joCreateResult" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="strUpdateID" />
+              <Variable x:TypeArguments="x:Int32" Name="intUpdateStatus" />
+              <Variable x:TypeArguments="x:Int32" Name="intIDeleteStatus" />
+              <Variable x:TypeArguments="njl:JObject" Name="joListCreate" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[list]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Config("sharePointList").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// NOTE: Use internal field names for create / update" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_List workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Add_List.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPlistName">[list]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="njl:JObject" x:Key="out_Result">[joListCreate]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[joListCreate.ToString]" />
+            <ui:NavigateTo Browser="[spBrowser]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[site + &quot;/Lists/&quot; + list]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;List created. Click ok to continue.&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[dctItem("Title")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">["Test"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Item workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Add_Item.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPlistName">[list]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_ItemValues">[dctItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="njl:JObject" x:Key="out_Result">[joCreateResult]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[joCreateResult.ToString]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Query_List workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get_List_Items.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPlistName">[list]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <OutArgument x:TypeArguments="njl:JArray" x:Key="out_ListJSON" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_oDataQuery">$filter=Title eq 'Test'</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_Attachments" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_AttachFolder" />
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ListDT">[dtTestList]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[dtTestList.Rows.Count.ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[strUpdateID]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[dtTestList(0)("ID").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[dctItem("Title")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">["Test_Changed"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Update_List_Item workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Update_List_Item.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_UpdateValues">[dctItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPlistName">[list]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPitemID">[strUpdateID]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intUpdateStatus]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[intUpdateStatus.ToString]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Items added and updated. Click OK to finish.&quot;]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Delete_List_Item workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Delete_List_Item.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Token">[token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPsiteURL">[site]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPlistName">[list]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SPitemID">[strUpdateID]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="out_Status">[intIDeleteStatus]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[intIDeleteStatus.ToString]" />
+            <ui:CloseTab Browser="[spBrowser]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="Supporting Files\API Setup Instructions.docx" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;An error occurred. Please review the setup steps to resolve the error below:&quot; + vbNewLine + exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

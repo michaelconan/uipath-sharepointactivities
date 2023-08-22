@@ -1,0 +1,46 @@
+{
+  "name": "Conan.SharePoint.Activities",
+  "description": "Reusable activities for interaction with the SharePoint REST API.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Credentials.Activities": "1.1.6479.13204",
+    "UiPath.Excel.Activities": "2.10.4",
+    "UiPath.System.Activities": "20.10.4",
+    "UiPath.UIAutomation.Activities": "21.4.3",
+    "UiPath.WebAPI.Activities": "1.4.4"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.4.1.0",
+  "projectVersion": "1.0.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": [
+        "Helpers/JObj_to_Row.xaml",
+        "Libraries/Retrieve_Files.xaml",
+        "Helpers/Get_Digest.xaml",
+        "Helpers/GetCURL.xaml",
+        "Libraries/Get_File.xaml",
+        "Helpers/EncodePaths.xaml",
+        "Main.xaml",
+        "Helpers/InteractiveSetup.xaml"
+      ]
+    },
+    "fileInfos": []
+  },
+  "expressionLanguage": "VisualBasic"
+}
